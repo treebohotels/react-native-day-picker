@@ -1,11 +1,10 @@
 'use strict';
 
-import React, {
-	PropTypes
-}               from 'react';
+import React from 'react';
+import PropTypes  from 'prop-types';
 import {
-	ListView,
-	StyleSheet,
+   ListView,
+   StyleSheet,
 }               from 'react-native';
 
 import Month    from './Month';
