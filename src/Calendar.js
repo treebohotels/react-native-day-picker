@@ -1,13 +1,13 @@
 'use strict';
 
-import React 		from 'react';
-import PropTypes  	from 'prop-types';
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
-   ListView,
-   StyleSheet,
-}               	from 'react-native';
+	ListView,
+	StyleSheet,
+} from 'react-native';
 
-import Month    	from './Month';
+import Month from './Month';
 
 
 export default class Calendar extends React.Component {
@@ -88,13 +88,13 @@ export default class Calendar extends React.Component {
 		this.changeSelection = this.changeSelection.bind(this);
 		this.generateMonths = this.generateMonths.bind(this);
 
-		let {selectFrom, selectTo, monthsCount, startDate} = this.props;
+		let { selectFrom, selectTo, monthsCount, startDate } = this.props;
 
 		this.selectFrom = selectFrom;
 		this.selectTo = selectTo;
 		this.months = this.generateMonths(monthsCount, startDate);
 
-		var dataSource = new ListView.DataSource({rowHasChanged: this.rowHasChanged});
+		var dataSource = new ListView.DataSource({ rowHasChanged: this.rowHasChanged });
 
 		this.state = {
 			dataSource: dataSource.cloneWithRows(this.months)
@@ -113,7 +113,7 @@ export default class Calendar extends React.Component {
 		var months = [];
 		var dateUTC;
 		var monthIterator = startDate;
-		var {isFutureDate, startFromMonday} = this.props;
+		var { isFutureDate, startFromMonday } = this.props;
 
 		var startUTC = Date.UTC(startDate.getYear(), startDate.getMonth(), startDate.getDate());
 
@@ -126,7 +126,7 @@ export default class Calendar extends React.Component {
 					date: day,
 					status: this.getStatus(day, this.selectFrom, this.selectTo),
 					disabled: day.getMonth() !== monthIterator.getMonth()
-					|| ((isFutureDate) ? startUTC > dateUTC : startUTC < dateUTC)
+						|| ((isFutureDate) ? startUTC > dateUTC : startUTC < dateUTC)
 				}
 			}));
 
@@ -174,7 +174,7 @@ export default class Calendar extends React.Component {
 	}
 
 	changeSelection(value) {
-		var {selectFrom, selectTo, months} = this;
+		var { selectFrom, selectTo, months } = this;
 
 		if (!selectFrom) {
 			selectFrom = value;
@@ -236,12 +236,12 @@ export default class Calendar extends React.Component {
 	}
 
 	render() {
-		let {style, isFutureDate} = this.props;
+		let { style, isFutureDate } = this.props;
 		let directionStyles = {};
 
 		if (!isFutureDate) {
 			directionStyles = {
-				transform: [{scaleY: -1}]
+				transform: [{ scaleY: -1 }]
 			}
 		}
 

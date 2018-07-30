@@ -1,12 +1,12 @@
 'use strict';
 
-import React    from 'react';
+import React from 'react';
 import {
 	View,
 	StyleSheet,
 	Text
-}               from 'react-native';
-import Day      from './Day'
+} from 'react-native';
+import Day from './Day'
 
 export default class Month extends React.Component {
 	constructor(props) {
@@ -28,8 +28,8 @@ export default class Month extends React.Component {
 		var monthHeader = monthsLocale[days[15].date.getMonth()] + ' ' + days[15].date.getFullYear();
 
 		return (
-			<View style={[style, {width: width, backgroundColor: bodyBackColor}]}>
-				<Text style={[styles.monthHeader, {color: monthTextColor || bodyTextColor}]}>
+			<View style={[style, { width: width, backgroundColor: bodyBackColor }]}>
+				<Text style={[styles.monthHeader, { color: monthTextColor || bodyTextColor }]}>
 					{monthHeader}
 				</Text>
 				<View style={styles.monthDays}>
@@ -43,7 +43,7 @@ export default class Month extends React.Component {
 									height: width / 7
 								}]}
 							>
-								<Text style={{color: bodyTextColor}}>{dayName}</Text>
+								<Text style={{ color: bodyTextColor }}>{dayName}</Text>
 							</View>
 						);
 					})}

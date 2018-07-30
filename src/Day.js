@@ -1,15 +1,15 @@
 'use strict';
 
-import React    from 'react';
+import React from 'react';
 import {
 	StyleSheet,
 	TouchableOpacity,
 	Text
-}               from 'react-native';
+} from 'react-native';
 
 export default class Day extends React.Component {
 	render() {
-		let {date, status, disabled, onDayPress, width} = this.props;
+		let { date, status, disabled, onDayPress, width } = this.props;
 		let onPress, textColor, backColor;
 
 		if (disabled) {
@@ -46,9 +46,12 @@ export default class Day extends React.Component {
 		return (
 			<TouchableOpacity
 				activeOpacity={disabled ? 1 : 0.5}
-				style={[styles.common, {backgroundColor: backColor, width: width / 7, height: width / 7}]}
-				onPress={onPress}>
-				<Text style={{color: textColor}}>{date.getDate()}</Text>
+				style={[styles.common, { backgroundColor: backColor, width: width / 7, height: width / 7 }]}
+				onPress={onPress}
+				testID="day-button"
+				accessibilityLabel="day-button"
+			>
+				<Text style={{ color: textColor }}>{date.getDate()}</Text>
 			</TouchableOpacity>
 		);
 	}
