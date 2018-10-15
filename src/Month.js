@@ -30,8 +30,8 @@ export default class Month extends React.Component {
 		return (
 			<View style={[style, { width: width, backgroundColor: bodyBackColor }]}>
 				<Text
-					testID="month-text"
-					accessibilityLabel="month-text"
+					testID="t-dp-month-header"
+					accessibilityLabel="t-dp-month-header"
 					style={[styles.monthHeader, { color: monthTextColor || bodyTextColor }]}>
 					{monthHeader}
 				</Text>
